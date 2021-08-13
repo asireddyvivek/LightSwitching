@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bulb Project</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .container
+            {
+                display: grid;
+                justify-content: center;
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto;
+                grid-row-gap: 20px;
+            }
+            img
+            {
+                display: gird-inline;
+                width: 500px;
+                height: 500px;
+
+            }
+            button
+            {
+                display:grid;
+                margin: auto;
+                background-color: white;
+                border: none;
+            }
+            .fa-10x
+            {
+                width: 400px;
+            }
+
+            .fa-toggle-off
+            {
+                color:red;
+            }
+            .fa-toggle-on
+            {
+                color:green;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img id="bulb" src="https://gdurl.com/hwN0" value="0">
+            <button  onclick="toggle()"><i id="switch" class="fas fa-toggle-off fa-10x"></i></button>
+            
+        </div>
+        <script>
+            function toggle()
+            {
+                var img = document.getElementById("bulb");
+                var value = img.getAttribute("value");
+                var btn = document.getElementById("switch");
+
+                if(value==0)
+                {
+                    img.setAttribute("src","https://gdurl.com/35KN");
+                    img.setAttribute("value","1");
+                    btn.setAttribute("class","fas fa-toggle-on fa-10x");
+                }
+                if(value==1)
+                {
+                    img.setAttribute("src","https://gdurl.com/hwN0");
+                    img.setAttribute("value","0");    
+                    btn.setAttribute("class","fas fa-toggle-off fa-10x");
+                }
+
+            }
+        </script>
+    </body>
+</html>
